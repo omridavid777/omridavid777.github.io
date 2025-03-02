@@ -14,8 +14,25 @@
             padding: 0; 
             direction: rtl;
         }
+        .navbar {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 10px;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        .navbar a:hover {
+            background-color: #ffcc00;
+            color: black;
+        }
         .container { 
-            max-width: 500px; 
+            max-width: 600px; 
             margin: 50px auto; 
             padding: 20px; 
             background: rgba(255, 255, 255, 0.1); /* רקע חצי שקוף */
@@ -29,9 +46,18 @@
     </style>
 </head>
 <body>
+
+    <!-- תפריט ניווט -->
+    <div class="navbar">
+        <a href="#about">אודות</a>
+        <a href="#projects">פרויקטים</a>
+        <a href="#contact">צור קשר</a>
+    </div>
+
     <div class="container">
         <h1>Omri David</h1>
         <p>Data Analyst | SQL | Power BI | Python</p>
+
         <p>I am a Data Analyst with strong expertise in <b>SQL, Power BI, and Python</b>. 
         With years of experience in <b>data-driven decision-making and pattern recognition</b>, 
         I excel in analyzing complex datasets to derive actionable insights.</p>
@@ -39,17 +65,31 @@
         <p>Coming from a background in <b>law enforcement and intelligence analysis</b>, 
         I have developed a keen analytical mindset, the ability to think outside the box, 
         and a strong problem-solving approach.</p>
-        
+
         <p>I am passionate about transforming raw data into meaningful business insights, 
         and I am currently seeking new challenges in the <b>data analytics industry</b> to drive impactful decision-making through data.</p>
 
         <a href="https://www.linkedin.com/in/omri-david-617b26244" target="_blank">🔗 LinkedIn Profile</a>
         <a href="https://github.com/omridavid777" target="_blank">💻 GitHub Portfolio</a>
-
-        <div class="contact">
-            <p>📧 Email: <a href="mailto:omridavid777@gmail.com">omridavid777@gmail.com</a></p>
-            <p>📞 Phone: 052-5445366</p>
-        </div>
     </div>
+
+    <!-- סעיף פרויקטים -->
+    <div class="container" id="projects">
+        <h2>📊 My Projects</h2>
+        <p>Here are some of my recent data analytics projects:</p>
+        <ul style="text-align: left; color: white;">
+            <li><a href="https://github.com/omridavid777/project1" target="_blank">Project 1 - Data Analysis with SQL</a></li>
+            <li><a href="https://github.com/omridavid777/project2" target="_blank">Project 2 - Power BI Dashboard</a></li>
+            <li><a href="https://github.com/omridavid777/project3" target="_blank">Project 3 - Python Data Scraping</a></li>
+        </ul>
+    </div>
+
+    <!-- צור קשר -->
+    <div class="container" id="contact">
+        <h2>📞 Contact Me</h2>
+        <p>📧 Email: <a href="mailto:omridavid777@gmail.com">omridavid777@gmail.com</a></p>
+        <p>📞 Phone: 052-5445366</p>
+    </div>
+
 </body>
 </html>
