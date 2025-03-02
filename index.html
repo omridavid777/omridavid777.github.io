@@ -18,24 +18,39 @@
             background: rgba(0, 0, 0, 0.3);
             padding: 10px;
             text-align: center;
+            position: relative;
         }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            margin: 10px;
-            padding: 8px 15px;
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            min-width: 150px;
+            text-align: left;
             border-radius: 5px;
+            z-index: 1;
         }
-        .navbar a:hover {
+        .dropdown-content a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .dropdown-content a:hover {
             background-color: #ffcc00;
             color: black;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
         .container { 
             max-width: 600px; 
             margin: 50px auto; 
             padding: 20px; 
-            background: rgba(255, 255, 255, 0.1); /* Transparent Background */
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 8px; 
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); 
         }
@@ -44,47 +59,76 @@
         a { color: #ffcc00; text-decoration: none; font-weight: bold; display: block; margin: 10px 0; cursor: pointer; }
         .contact { margin-top: 20px; font-size: 16px; color: white; }
         ul { list-style-type: none; padding: 0; }
-        .bold { font-weight: bold; color: #ffcc00; } /* Highlighted Text */
-        .certificate-img { max-width: 100%; border-radius: 8px; margin-top: 20px; display: none; } /* Initially Hidden */
-    </style>
-    <script>
-        function toggleCertificate(certId) {
-            var cert = document.getElementById(certId);
-            if (cert.style.display === "block") {
-                cert.style.display = "none";
-            } else {
-                cert.style.display = "block";
-            }
+        .bold { font-weight: bold; color: #ffcc00; } 
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
         }
-    </script>
+        .skill-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 120px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            text-align: left;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navigation Menu -->
+    <!-- Navigation Menu with Dropdown -->
     <div class="navbar">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#courses">Courses</a>
-        <a href="#contact">Contact</a>
+        <div class="dropdown">
+            <a href="#">Menu ⏷</a>
+            <div class="dropdown-content">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#courses">Courses</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
     </div>
 
     <div class="container" id="about">
         <h1>Omri David</h1>
-        <p>Data Analyst | SQL | Power BI | Python</p>
+        <p>Data Analyst | SQL | Power BI</p>
 
-        <p>I am a Data Analyst with strong expertise in <b>SQL, Power BI, and Python</b>. 
-        With years of experience in <b>data-driven decision-making and pattern recognition</b>, 
+        <p>I am a Data Analyst with strong expertise in <b>SQL, Power BI, and data visualization</b>. 
+        With years of experience in <b>data-driven decision-making</b>, 
         I excel in analyzing complex datasets to derive actionable insights.</p>
-        
-        <p>Coming from a background in <b>law enforcement and intelligence analysis</b>, 
-        I have developed a keen analytical mindset, the ability to think outside the box, 
-        and a strong problem-solving approach.</p>
-
-        <p>I am passionate about transforming raw data into meaningful business insights, 
-        and I am currently seeking new challenges in the <b>data analytics industry</b> to drive impactful decision-making through data.</p>
 
         <a href="https://www.linkedin.com/in/omri-david-617b26244" target="_blank">🔗 LinkedIn Profile</a>
         <a href="https://github.com/omridavid777" target="_blank">💻 GitHub Portfolio</a>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="container" id="skills">
+        <h2>🚀 My Skills</h2>
+        <div class="skills-container">
+            <div class="skill-box">⚡ SQL (Advanced)</div>
+            <div class="skill-box">📊 Power BI (Dashboards, DAX)</div>
+            <div class="skill-box">📈 Excel (Pivot Tables, VLOOKUP)</div>
+            <div class="skill-box">📉 Data Cleaning & Visualization</div>
+        </div>
     </div>
 
     <!-- Projects Section -->
@@ -99,35 +143,16 @@
         </ul>
     </div>
 
-    <!-- Courses Section -->
-    <div class="container" id="courses">
-        <h2>📚 Completed Courses</h2>
-        <p>Click on a course to view its certification:</p>
-        <ul style="text-align: left; color: white;">
-            <li class="bold"><a onclick="toggleCertificate('google-cert')">📖 Google Data Analytics</a></li>
-            <li class="bold"><a onclick="toggleCertificate('microsoft-cert')">📖 Career Essentials in Data Analysis by Microsoft and LinkedIn</a></li>
-            <li class="bold"><a onclick="toggleCertificate('sql-bootcamp-cert')">📖 The Complete SQL Bootcamp: Go from Zero to Hero</a></li>
-        </ul>
-        
-        <!-- Google Data Analytics Certificate -->
-        <img src="https://i.ibb.co/Q70cHzSw/image-18a61ede-247d-4aec-84c5-3d6992ced00f20250302-151346.jpg" 
-             alt="Google Data Analytics Certificate" 
-             id="google-cert" class="certificate-img">
-
-        <!-- Microsoft & LinkedIn Certificate -->
-        <img src="https://i.ibb.co/Fqjfhg3S/IMG-20250302-160239.jpg" 
-             alt="Microsoft & LinkedIn Certificate" 
-             id="microsoft-cert" class="certificate-img">
-
-        <!-- The Complete SQL Bootcamp Certificate -->
-        <img src="https://i.ibb.co/4ZMLxGBk/image-adbc93bc-79f1-4e36-9a56-309d8e6f115520250302-160756.jpg" 
-             alt="The Complete SQL Bootcamp Certificate" 
-             id="sql-bootcamp-cert" class="certificate-img">
-    </div>
-
-    <!-- Contact Section -->
+    <!-- Contact Form -->
     <div class="container" id="contact">
         <h2>📞 Contact Me</h2>
+        <p>Fill out the form below to send me a message:</p>
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required><br>
+            <input type="email" name="email" placeholder="Your Email" required><br>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea><br>
+            <button type="submit">Send Message</button>
+        </form>
         <p>📧 Email: <a href="mailto:omridavid777@gmail.com">omridavid777@gmail.com</a></p>
         <p>📞 Phone: 052-5445366</p>
     </div>
