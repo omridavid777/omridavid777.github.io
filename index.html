@@ -74,23 +74,18 @@
             text-align: center;
             min-width: 120px;
         }
-        .contact-form input, .contact-form textarea {
-            width: 90%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: none;
-            text-align: left;
-        }
-        .contact-form button {
-            padding: 10px 20px;
-            background-color: #ffcc00;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+        .certificate-img { max-width: 100%; border-radius: 8px; margin-top: 20px; display: none; }
     </style>
+    <script>
+        function toggleCertificate(certId) {
+            var cert = document.getElementById(certId);
+            if (cert.style.display === "block") {
+                cert.style.display = "none";
+            } else {
+                cert.style.display = "block";
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -112,10 +107,6 @@
         <h1>Omri David</h1>
         <p>Data Analyst | SQL | Power BI</p>
 
-        <p>I am a Data Analyst with strong expertise in <b>SQL, Power BI, and data visualization</b>. 
-        With years of experience in <b>data-driven decision-making</b>, 
-        I excel in analyzing complex datasets to derive actionable insights.</p>
-
         <a href="https://www.linkedin.com/in/omri-david-617b26244" target="_blank">🔗 LinkedIn Profile</a>
         <a href="https://github.com/omridavid777" target="_blank">💻 GitHub Portfolio</a>
     </div>
@@ -131,22 +122,33 @@
         </div>
     </div>
 
-    <!-- Projects Section -->
-    <div class="container" id="projects">
-        <h2>📊 My Projects</h2>
-        <p>Here are some of my recent data analytics projects:</p>
+    <!-- Courses Section -->
+    <div class="container" id="courses">
+        <h2>📚 Completed Courses</h2>
+        <p>Click on a course to view its certification:</p>
         <ul style="text-align: left; color: white;">
-            <li><a href="https://github.com/omridavid777/IMDB-Project" target="_blank">🎬 IMDB Project</a></li>
-            <li><a href="https://github.com/omridavid777/Project---Understanding-Professional-Demographics-in-2025" target="_blank">📊 Understanding Professional Demographics in 2025</a></li>
-            <li><a href="https://github.com/omridavid777/Premier-League---Analysis" target="_blank">⚽ Premier League Analysis</a></li>
-            <li><a href="https://github.com/omridavid777/Breaking-Down-Sales-with-Power-BI-" target="_blank">📈 Breaking Down Sales with Power BI</a></li>
+            <li class="bold"><a onclick="toggleCertificate('google-cert')">📖 Google Data Analytics</a></li>
+            <li class="bold"><a onclick="toggleCertificate('microsoft-cert')">📖 Career Essentials in Data Analysis by Microsoft and LinkedIn</a></li>
+            <li class="bold"><a onclick="toggleCertificate('sql-bootcamp-cert')">📖 The Complete SQL Bootcamp: Go from Zero to Hero</a></li>
         </ul>
+        
+        <!-- Certificates -->
+        <img src="https://i.ibb.co/Q70cHzSw/image-18a61ede-247d-4aec-84c5-3d6992ced00f20250302-151346.jpg" 
+             alt="Google Data Analytics Certificate" 
+             id="google-cert" class="certificate-img">
+
+        <img src="https://i.ibb.co/Fqjfhg3S/IMG-20250302-160239.jpg" 
+             alt="Microsoft & LinkedIn Certificate" 
+             id="microsoft-cert" class="certificate-img">
+
+        <img src="https://i.ibb.co/4ZMLxGBk/image-adbc93bc-79f1-4e36-9a56-309d8e6f115520250302-160756.jpg" 
+             alt="The Complete SQL Bootcamp Certificate" 
+             id="sql-bootcamp-cert" class="certificate-img">
     </div>
 
     <!-- Contact Form -->
     <div class="container" id="contact">
         <h2>📞 Contact Me</h2>
-        <p>Fill out the form below to send me a message:</p>
         <form class="contact-form">
             <input type="text" name="name" placeholder="Your Name" required><br>
             <input type="email" name="email" placeholder="Your Email" required><br>
