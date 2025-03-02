@@ -124,6 +124,44 @@ a { color: #0073e6; text-decoration: none; font-weight: bold; } /* Blue Links */
         <a href="https://github.com/omridavid777" target="_blank">💻 GitHub Portfolio</a>
     </div>
 
+<!-- Dashboard Gallery Section -->
+<div class="container">
+    <h1>📊 Dashboard Gallery</h1>
+    <p>Click on a dashboard to view in full size.</p>
+    
+    <div class="gallery">
+        <!-- IMDB Project -->
+        <a href="https://ibb.co/whqJRYJP" target="_blank">
+            <img src="https://i.ibb.co/1GNsLbsP/Screenshot-2025-03-02-09-00-32-906-com-google-android-apps-nbu-files.jpg" 
+                 alt="IMDB Project Dashboard">
+        </a>
+    </div>
+</div>
+
+<!-- Gallery CSS -->
+<style>
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    .gallery a {
+        text-decoration: none;
+    }
+    .gallery img {
+        width: 300px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+    }
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+</style>
+    
     <!-- Skills Section -->
     <div class="container" id="skills">
         <h2>🚀 My Skills</h2>
