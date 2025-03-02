@@ -48,8 +48,13 @@
         .certificate-img { max-width: 100%; border-radius: 8px; margin-top: 20px; display: none; } /* Initially Hidden */
     </style>
     <script>
-        function showCertificate() {
-            document.getElementById('certificate').style.display = 'block';
+        function toggleCertificate(certId) {
+            var cert = document.getElementById(certId);
+            if (cert.style.display === "block") {
+                cert.style.display = "none";
+            } else {
+                cert.style.display = "block";
+            }
         }
     </script>
 </head>
@@ -99,16 +104,21 @@
         <h2>📚 Completed Courses</h2>
         <p>Click on a course to view its certification:</p>
         <ul style="text-align: left; color: white;">
-            <li class="bold"><a onclick="showCertificate()">📖 Google Data Analytics</a></li>
-            <li class="bold">📖 Career Essentials in Data Analysis by Microsoft and LinkedIn</li>
+            <li class="bold"><a onclick="toggleCertificate('google-cert')">📖 Google Data Analytics</a></li>
+            <li class="bold"><a onclick="toggleCertificate('microsoft-cert')">📖 Career Essentials in Data Analysis by Microsoft and LinkedIn</a></li>
             <li class="bold">📖 SQL Beginners Level Course by Alexander Shafe</li>
             <li class="bold">📖 The Complete SQL Bootcamp: Go from Zero to Hero</li>
         </ul>
         
-        <!-- Updated to use the direct image link -->
+        <!-- Google Data Analytics Certificate -->
         <img src="https://i.ibb.co/Q70cHzSw/image-18a61ede-247d-4aec-84c5-3d6992ced00f20250302-151346.jpg" 
              alt="Google Data Analytics Certificate" 
-             id="certificate" class="certificate-img">
+             id="google-cert" class="certificate-img">
+
+        <!-- Microsoft & LinkedIn Certificate -->
+        <img src="https://i.ibb.co/Fqjfhg3S/IMG-20250302-160239.jpg" 
+             alt="Microsoft & LinkedIn Certificate" 
+             id="microsoft-cert" class="certificate-img">
     </div>
 
     <!-- Contact Section -->
