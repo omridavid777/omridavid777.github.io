@@ -169,18 +169,20 @@
     </div>
 
 
-    <!-- Contact Form -->
-    <div class="container" id="contact">
-        <h2>📞 Contact Me</h2>
-        <p>Fill out the form below to send me a message:</p>
-        <form class="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required><br>
-            <input type="email" name="email" placeholder="Your Email" required><br>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea><br>
-            <button type="submit">Send Message</button>
-        </form>
-        <p>📧 Email: <a href="mailto:omridavid777@gmail.com">omridavid777@gmail.com</a></p>
-        <p>📞 Phone: 052-5445366</p>
-    </div>
+<!-- Contact Section with Real Form -->
+<div class="container" id="contact">
+    <h2>📞 Contact Me</h2>
+    <p>Fill out the form below to send me a message:</p>
+    <form action="https://formsubmit.co/omridavid777@gmail.com" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required><br>
+        <input type="email" name="email" placeholder="Your Email" required><br>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea><br>
+        <input type="hidden" name="_subject" value="New Contact Form Submission">
+        <input type="hidden" name="_captcha" value="false">
+        <button type="submit">Send Message</button>
+    </form>
+    <p>📧 Email: <a href="mailto:omridavid777@gmail.com">omridavid777@gmail.com</a></p>
+    <p>📞 Phone: 052-5445366</p>
+</div>
 </body>
 </html>
