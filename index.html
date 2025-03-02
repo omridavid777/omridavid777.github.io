@@ -41,12 +41,17 @@
         }
         h1, h2 { color: white; }
         p { font-size: 18px; color: white; }
-        a { color: #ffcc00; text-decoration: none; font-weight: bold; display: block; margin: 10px 0; }
+        a { color: #ffcc00; text-decoration: none; font-weight: bold; display: block; margin: 10px 0; cursor: pointer; }
         .contact { margin-top: 20px; font-size: 16px; color: white; }
         ul { list-style-type: none; padding: 0; }
         .bold { font-weight: bold; color: #ffcc00; } /* Highlighted Text */
-        .certificate-img { max-width: 100%; border-radius: 8px; margin-top: 20px; }
+        .certificate-img { max-width: 100%; border-radius: 8px; margin-top: 20px; display: none; } /* Initially Hidden */
     </style>
+    <script>
+        function showCertificate() {
+            document.getElementById('certificate').style.display = 'block';
+        }
+    </script>
 </head>
 <body>
 
@@ -92,16 +97,15 @@
     <!-- Courses Section -->
     <div class="container" id="courses">
         <h2>📚 Completed Courses</h2>
-        <p>Here are some of the professional courses I have completed:</p>
+        <p>Click on a course to view its certification:</p>
         <ul style="text-align: left; color: white;">
+            <li class="bold"><a onclick="showCertificate()">📖 Google Data Analytics</a></li>
             <li class="bold">📖 Career Essentials in Data Analysis by Microsoft and LinkedIn</li>
-            <li class="bold">📖 Google Data Analytics</li>
             <li class="bold">📖 SQL Beginners Level Course by Alexander Shafe</li>
             <li class="bold">📖 The Complete SQL Bootcamp: Go from Zero to Hero</li>
         </ul>
         
-        <h3>🎓 Google Data Analytics Certification</h3>
-        <img src="google_data_analytics_certificate.jpg" alt="Google Data Analytics Certificate" class="certificate-img">
+        <img src="google_data_analytics_certificate.jpg" alt="Google Data Analytics Certificate" id="certificate" class="certificate-img">
     </div>
 
     <!-- Contact Section -->
